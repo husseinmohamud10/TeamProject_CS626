@@ -131,11 +131,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -150,8 +150,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -207,65 +205,13 @@ var AddEmployee = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(AddEmployee);
 
-  function AddEmployee(_props) {
-    var _this;
-
+  function AddEmployee() {
     _classCallCheck(this, AddEmployee);
 
-    _this = _super.call(this, _props);
-
-    _defineProperty(_assertThisInitialized(_this), "showData", function () {
-      loadData().then(function (result) {
-        // update the state using setState by assign result to list key.
-        _this.setState({
-          lists: result
-        });
-
-        console.log(result);
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "Display", function (props) {
-      var rows = [];
-      console.log(props);
-
-      if (props.addEmployee) {
-        props.addEmployee.map(function (currentelement, index) {
-          rows.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", {
-            key: index
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, props.addEmployee[index].empid), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, props.addEmployee[index].fullName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, props.addEmployee[index].address), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, props.addEmployee[index].age), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, props.addEmployee[index].email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, props.addEmployee[index].phoneNumber)));
-        });
-      }
-
-      return rows;
-    });
-
-    _this.state = {
-      lists: []
-    };
-    return _this;
+    return _super.apply(this, arguments);
   }
 
-  _createClass(AddEmployee, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var details = "Employee Details:";
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        title: "Outer div",
-        className: "nav-bar"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-        type: "submit",
-        className: "button",
-        onClick: function onClick() {
-          return _this2.showData();
-        }
-      }, "Add Employee"), "\xA0\xA0\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, details), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Employee Id"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Emp Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Age"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Contact Number"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, this.Display(this.state.lists))));
-    }
-  }]);
-
-  return AddEmployee;
+  return _createClass(AddEmployee);
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 
