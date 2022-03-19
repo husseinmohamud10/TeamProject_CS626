@@ -36,7 +36,6 @@ export default class ListEmployees extends React.Component {
   }
 
   componentDidMount() {
-    console.log("inside mount");
     this.showData();
   }
 

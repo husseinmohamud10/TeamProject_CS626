@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
 async function loadData() {
   const response =  await fetch(window.UI_API_ENDPOINT, {
     method:'POST',
