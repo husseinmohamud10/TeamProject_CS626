@@ -14,7 +14,7 @@ async function getEmployeeById(root,args,context,info)
     const db = getDb();
     employee =await db.collection('Employees').find({"empid":args.empid}).toArray();
     console.log(employee);
-    return employee;
+    return employee[0];
         
 }
  

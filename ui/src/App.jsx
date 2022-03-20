@@ -16,6 +16,4 @@ const element = (
 
 ReactDOM.render(element, document.getElementById('contents'));
 
-// if(import.meta.webpackHot) {
-//     import.meta.webpackHot.accept();
-// }
+

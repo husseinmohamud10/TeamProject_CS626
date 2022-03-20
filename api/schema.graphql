@@ -10,7 +10,7 @@ type Employee {
 
 type Query {
     EmployeesList: [Employee]
-    getEmployeebyId(empid: Int!): [Employee]
+    getEmployeebyId(empid: Int!): Employee
 }
 type Mutation {
     addEmployee(input: inEmployee!): String

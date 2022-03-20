@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-//import GetEmployee from './getEmployee.jsx';
 
 async function loadData() {
   const response =  await fetch(window.ENV.UI_API_ENDPOINT, {
@@ -47,13 +45,13 @@ Display = (props) => {
   if (props.EmployeesList) {
     props.EmployeesList.map(function(currentelement, index) {
     rows.push(<tr key={index}><td>{props.EmployeesList[index].empid}</td>
-     <td>{props.EmployeesList[index].fullName}</td>
-          <td>{props.EmployeesList[index].address}</td>
-          <td>{props.EmployeesList[index].age}</td>
-          <td>{props.EmployeesList[index].email}</td>
-          <td>{props.EmployeesList[index].phoneNumber}</td>
-          <td><Link to={`/edit/${props.EmployeesList[index].empid}`}>Edit</Link></td>
-          <td><Link to={`/delete/${props.EmployeesList[index].empid}`}>Delete</Link></td>
+    <td>{props.EmployeesList[index].fullName}</td>
+    <td>{props.EmployeesList[index].address}</td>
+    <td>{props.EmployeesList[index].age}</td>
+    <td>{props.EmployeesList[index].email}</td>
+    <td>{props.EmployeesList[index].phoneNumber}</td>
+    <td><Link to={`/edit/${props.EmployeesList[index].empid}`}>Edit</Link></td>
+    <td><Link to={`/delete/${props.EmployeesList[index].empid}`}>Delete</Link></td>
     </tr>);
     });
   }
@@ -64,9 +62,7 @@ return rows;
 render() { 
   const details = "Employee Details:";
   return (
-    <div title="Outer div" className="nav-bar">
-     
-    
+    <div title="Outer div" className="nav-bar">    
     <h2>{details}</h2>&nbsp;&nbsp;&nbsp;
     <table width= '100%'>
       <thead>
