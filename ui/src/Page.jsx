@@ -10,7 +10,7 @@ function NavBar() {
             {' | '}
             <NavLink to="/listEmployees">List Employees</NavLink>
             {' | '}
-            <NavLink to="/create">Add an Employee</NavLink>
+            <NavLink to="/addEmployee">Add an Employee</NavLink>
             
         </nav>
         );
@@ -21,8 +21,7 @@ export default  function Page() {
         <div>
             <h1>Employee Information</h1>
            <NavBar />
-           <Contents />
-            
+           <Contents />            
         </div>
     );
 }

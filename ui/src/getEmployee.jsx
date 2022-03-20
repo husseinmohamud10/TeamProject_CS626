@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 async function loadData() {
-  const response =  await fetch(window.UI_API_ENDPOINT, {
+  const response =  await fetch(window.ENV.UI_API_ENDPOINT, {
     method:'POST',
     headers:{'content-type':'application/json'}
     ,body:JSON.stringify({query:`query getEmployeebyId {
@@ -24,11 +25,14 @@ return rsponseBody.data;
 
 export default class GetEmployee extends React.Component{
 
+  
 constructor(props){
     super(props);
     //console.log(match.params);
     //console.log(props.getEmployeebyid[0].empid);
+    console.log(props.getEmployeebyid);
     this.state = {lists : []}
+    
     }
     showData = ()=> {
     loadData().then(result => {
@@ -58,6 +62,8 @@ constructor(props){
   }
   render() { 
   const details = "Employee Details:";
+  
+ 
   return (
     <div title="Outer div" className="nav-bar">
       console.log("getEmployee");

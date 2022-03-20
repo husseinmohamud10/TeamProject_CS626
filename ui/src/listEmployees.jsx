@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+//import GetEmployee from './getEmployee.jsx';
 
 async function loadData() {
   const response =  await fetch(window.ENV.UI_API_ENDPOINT, {
@@ -44,7 +46,14 @@ Display = (props) => {
   var rows = [];
   if (props.EmployeesList) {
     props.EmployeesList.map(function(currentelement, index) {
-    rows.push(<tr key={index}><td><NavLink to ={{pathname:"/GetEmployee/"+ `${props.EmployeesList[index].empid}`}}>{props.EmployeesList[index].empid}</NavLink></td>
+    rows.push(<tr key={index}><td>{props.EmployeesList[index].empid}</td>
+     <td>{props.EmployeesList[index].fullName}</td>
+          <td>{props.EmployeesList[index].address}</td>
+          <td>{props.EmployeesList[index].age}</td>
+          <td>{props.EmployeesList[index].email}</td>
+          <td>{props.EmployeesList[index].phoneNumber}</td>
+          <td><Link to={`/edit/${props.EmployeesList[index].empid}`}>Edit</Link></td>
+          <td><Link to={`/delete/${props.EmployeesList[index].empid}`}>Delete</Link></td>
     </tr>);
     });
   }
@@ -56,17 +65,23 @@ render() {
   const details = "Employee Details:";
   return (
     <div title="Outer div" className="nav-bar">
-      console.log(listemployee);
-    {/* <button type ="submit" className="button" onClick={()=>this.showData()}>List Employees</button>&nbsp;&nbsp;&nbsp; */}
+     
+    
     <h2>{details}</h2>&nbsp;&nbsp;&nbsp;
     <table width= '100%'>
       <thead>
         <tr>
           <th width= '100%'>Employee Id</th>
-        </tr></thead>
-      <tbody>{this.Display(this.state.lists)}</tbody>
-      </table>
-      </div>
+          <th>Emp Name</th>
+          <th>Address</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+    <tbody>{this.Display(this.state.lists)}</tbody>
+    </table>
+    </div>
         );     
 }
 }
