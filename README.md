@@ -1,6 +1,7 @@
 # TeamProject_CS628
 Creating Employee Portal 
 
+***** The latest code available in master branch****
 **How to Run Local**
 Clone the project to local
 Open the root project in terminal
