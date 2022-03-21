@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-//import Navbar from './navbar.jsx';
 import Contents from './Contents.jsx';
 
 function NavBar() {

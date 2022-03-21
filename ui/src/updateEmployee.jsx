@@ -98,7 +98,7 @@ export default function UpdateEmployee() {
     
     return (
         <div> 
-         <form name ="employeeUpdate" onSubmit={handleSubmit}>
+         <form name ="employeeUpdate" onSubmit={(e) =>handleSubmit(e)}>
     <label>Employee Id: </label> <input type="text"   name="empid" value={employeeData.empid?employeeData.empid:0}  /><br/><br/>
     <label>Full Name:</label> <input type="text" contentEditable="true" name="fullName" value={employeeData.fullName}  onChange = {handleOnChange} /> <br/><br/>
     <label>Address: <input type="text" name="address" contentEditable="true" value={employeeData.address?employeeData.address:""} onChange = {handleOnChange} /> </label><br/><br/>

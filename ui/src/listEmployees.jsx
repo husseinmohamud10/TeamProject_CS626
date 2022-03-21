@@ -19,7 +19,6 @@ async function loadData() {
 })
   
 const rsponseBody =  await response.json();
-console.log (rsponseBody);
 return rsponseBody.data;
 }
   

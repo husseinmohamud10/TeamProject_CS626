@@ -18,7 +18,7 @@ export default class AddEmployee extends React.Component{
     const data = await graphQLFetch(query, { employee });
     if (data) {
       alert("Record Inserted Successfully!");
-      return <Navigate replace to="/listEmployees"/>
+      return (<Navigate replace to="/listEmployees"/>);
     }
     
   }
@@ -38,8 +38,9 @@ async handleSubmit(event) {
 }
 render() { 
   return (
+
   <div title="Outer div" className="nav-bar">    
-  <form name ="employeeAdd" onSubmit={this.handleSubmit}>
+  <form name ="employeeAdd" onSubmit={(e)=>this.handleSubmit(e)}>
     <label>Employee Id: <input type="text" name="empid" required/> </label><br/>
     <br/>
     <label>Full Name: <input type="text" name="fullName" required/> </label><br/><br/>
