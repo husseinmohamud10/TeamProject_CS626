@@ -1,8 +1,12 @@
-# TeamProject_CS628
-Creating Employee Portal 
+Project title: Employee Portal 
+Course Number : CS628 - Full Stack Development II
+Quarter and Year: Winter 2021
+Team Name: T04
+Team members: Archana Deepak Kumar ,Adrian Wilkinson, Hussein Mohamud, Kefan Yao
 
 ***** The latest code available in master branch****
-**How to Run Local**
+
+**Instructions on How to Run Local**
 Clone the project to local
 Open the root project in terminal
 Perform 'npm install'
